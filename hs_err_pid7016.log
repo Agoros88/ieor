@@ -1,0 +1,253 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa95ef17bb, pid=7016, tid=6968
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_25-b18) (build 1.8.0_25-b18)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.25-b02 mixed mode windows-amd64 compressed oops)
+# Problematic frame:
+# C  [cplex1260remotejni.dll+0x2617bb]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000002070800):  JavaThread "main" [_thread_in_native, id=6968, stack(0x0000000001eb0000,0x0000000001fb0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0xffffffffffffffff
+
+Registers:
+RAX=0x0000000000000001, RBX=0x00000000164f45c0, RCX=0x0000000000000000, RDX=0x00000000164f3f70
+RSP=0x0000000001faed10, RBP=0x8c001300428a8739, RSI=0x0000000016520bd0, RDI=0x0000000000000001
+R8 =0x0000000000000002, R9 =0x00000000164f3f30, R10=0x0000000000000001, R11=0x000000001639eff8
+R12=0x3ff0000000000000, R13=0x0000000000000000, R14=0x00000000164f3f50, R15=0x00000000164f3ff0
+RIP=0x00007ffa95ef17bb, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x0000000001faed10)
+0x0000000001faed10:   0000000016531ca0 0000000000000000
+0x0000000001faed20:   0000000016520b60 00007ffa95cbe86d
+0x0000000001faed30:   000000000207e0f0 0000000000000000
+0x0000000001faed40:   00000000165877f0 0000000000000001
+0x0000000001faed50:   000000000000002b 00007ffa95f83fcf
+0x0000000001faed60:   0000000001fc0cc0 0000000000000001
+0x0000000001faed70:   000000001653e300 0000000000000005
+0x0000000001faed80:   00000000164f3f30 0000000000000001
+0x0000000001faed90:   00000000164f3f70 000000001624c720
+0x0000000001faeda0:   0000000000000000 0000000000000000
+0x0000000001faedb0:   0000000000000001 0000000000000000
+0x0000000001faedc0:   0000000000000010 0000000000000010
+0x0000000001faedd0:   0000000000000020 000000001653e520
+0x0000000001faede0:   0000000016531ca0 0000000000000000
+0x0000000001faedf0:   0000000000000000 0000000000000000
+0x0000000001faee00:   0000000016520b60 0000000016531ca0 
+
+Instructions: (pc=0x00007ffa95ef17bb)
+0x00007ffa95ef179b:   91 6c a3 00 4a 63 04 96 66 0f 2f c1 72 06 41 ff
+0x00007ffa95ef17ab:   0c 81 eb 1f 66 0f 2e d0 7a 02 74 f2 49 8b 2c c7
+0x00007ffa95ef17bb:   41 89 0c ae 49 8b 2c c7 4d 8b 23 4c 89 24 ea 49
+0x00007ffa95ef17cb:   ff 04 c7 49 ff c2 49 83 c3 08 4d 3b d0 7c b6 48 
+
+
+Register to memory mapping:
+
+RAX=0x0000000000000001 is an unknown value
+RBX=0x00000000164f45c0 is an unknown value
+RCX=0x0000000000000000 is an unknown value
+RDX=0x00000000164f3f70 is an unknown value
+RSP=0x0000000001faed10 is pointing into the stack for thread: 0x0000000002070800
+RBP=0x8c001300428a8739 is an unknown value
+RSI=0x0000000016520bd0 is an unknown value
+RDI=0x0000000000000001 is an unknown value
+R8 =0x0000000000000002 is an unknown value
+R9 =0x00000000164f3f30 is an unknown value
+R10=0x0000000000000001 is an unknown value
+R11=0x000000001639eff8 is an unknown value
+R12=0x3ff0000000000000 is an unknown value
+R13=0x0000000000000000 is an unknown value
+R14=0x00000000164f3f50 is an unknown value
+R15=0x00000000164f3ff0 is an unknown value
+
+
+Stack: [0x0000000001eb0000,0x0000000001fb0000],  sp=0x0000000001faed10,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [cplex1260remotejni.dll+0x2617bb]
+C  [cplex1260remotejni.dll+0x2ff652]
+C  [cplex1260remotejni.dll+0x2ff781]
+C  [cplex1260remotejni.dll+0x683f1b]
+C  0x0000000002185b74
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  ilog.cplex.Cplex.CPXaddrows(JJIII[D[B[I[I[D[Ljava/lang/String;[Ljava/lang/String;)I+0
+j  ilog.cplex.CplexI._addRows(I[D[D[I[I[D[Ljava/lang/String;)V+221
+j  ilog.cplex.CplexI.addRow(Lilog/cplex/CpxRange;DDI[I[DLjava/lang/String;)Lilog/cplex/CplexIndex;+67
+j  ilog.cplex.CpxRange.init(Lilog/cplex/CplexI;DDI[D[Lilog/cplex/CpxNumVar;)V+81
+j  ilog.cplex.CpxRange.<init>(Lilog/cplex/CplexI;DLilog/cplex/CpxNumExpr;DLjava/lang/String;)V+202
+j  ilog.cplex.IloCplexModeler.addRange(Lilog/cplex/CplexI;DLilog/concert/IloNumExpr;DLjava/lang/String;)Lilog/concert/IloRange;+38
+j  ilog.cplex.IloCplexModeler.addEq(Lilog/concert/IloNumExpr;DLjava/lang/String;)Lilog/concert/IloRange;+10
+j  ConicBB.QuadraticSolver.init(LconicSimplex/DagObjective;DI[Lilog/concert/IloNumVar;)V+560
+j  ConicBB.QuadraticSolver.<init>(LconicSimplex/DagObjective;[Lilog/concert/IloNumVar;)V+50
+j  ConicBB.ConicSolver.init(LconicSimplex/DagObjective;DI)V+728
+j  ConicBB.Main.main([Ljava/lang/String;)V+115
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00000000146eb800 JavaThread "Service Thread" daemon [_thread_blocked, id=8868, stack(0x0000000015ef0000,0x0000000015ff0000)]
+  0x00000000146e3000 JavaThread "C1 CompilerThread2" daemon [_thread_blocked, id=7632, stack(0x0000000015df0000,0x0000000015ef0000)]
+  0x00000000146e0800 JavaThread "C2 CompilerThread1" daemon [_thread_blocked, id=7456, stack(0x0000000015cf0000,0x0000000015df0000)]
+  0x000000001468d000 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=9092, stack(0x0000000015bf0000,0x0000000015cf0000)]
+  0x000000001468a000 JavaThread "Attach Listener" daemon [_thread_blocked, id=8392, stack(0x0000000015af0000,0x0000000015bf0000)]
+  0x0000000014689000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=8272, stack(0x00000000159f0000,0x0000000015af0000)]
+  0x0000000002166000 JavaThread "Finalizer" daemon [_thread_blocked, id=9012, stack(0x00000000158f0000,0x00000000159f0000)]
+  0x000000000215d000 JavaThread "Reference Handler" daemon [_thread_blocked, id=8416, stack(0x00000000157f0000,0x00000000158f0000)]
+=>0x0000000002070800 JavaThread "main" [_thread_in_native, id=6968, stack(0x0000000001eb0000,0x0000000001fb0000)]
+
+Other Threads:
+  0x0000000014655800 VMThread [stack: 0x00000000156f0000,0x00000000157f0000] [id=4924]
+  0x00000000146ee000 WatcherThread [stack: 0x0000000015ff0000,0x00000000160f0000] [id=9188]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ PSYoungGen      total 18432K, used 5439K [0x00000000eba00000, 0x00000000ece80000, 0x0000000100000000)
+  eden space 15872K, 34% used [0x00000000eba00000,0x00000000ebf4fc88,0x00000000ec980000)
+  from space 2560K, 0% used [0x00000000ecc00000,0x00000000ecc00000,0x00000000ece80000)
+  to   space 2560K, 0% used [0x00000000ec980000,0x00000000ec980000,0x00000000ecc00000)
+ ParOldGen       total 42496K, used 0K [0x00000000c2e00000, 0x00000000c5780000, 0x00000000eba00000)
+  object space 42496K, 0% used [0x00000000c2e00000,0x00000000c2e00000,0x00000000c5780000)
+ Metaspace       used 4202K, capacity 5752K, committed 6016K, reserved 1056768K
+  class space    used 459K, capacity 552K, committed 640K, reserved 1048576K
+
+Card table byte_map: [0x0000000011530000,0x0000000011720000] byte_map_base: 0x0000000010f19000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006418d490
+ Begin Bits: [0x0000000011c70000, 0x0000000012bb8000)
+ End Bits:   [0x0000000012bb8000, 0x0000000013b00000)
+
+Polling page: 0x0000000000730000
+
+CodeCache: size=245760Kb used=1632Kb max_used=1632Kb free=244127Kb
+ bounds [0x0000000002170000, 0x00000000023e0000, 0x0000000011170000]
+ total_blobs=658 nmethods=251 adapters=321
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.389 Thread 0x00000000146e3000 nmethod 246 0x0000000002304b90 code [0x0000000002304d40, 0x0000000002305558]
+Event: 0.389 Thread 0x00000000146e3000  248       3       java.util.Date::getCalendarSystem (15 bytes)
+Event: 0.389 Thread 0x00000000146e3000 nmethod 248 0x00000000023058d0 code [0x0000000002305a60, 0x0000000002305f68]
+Event: 0.389 Thread 0x00000000146e3000  249       3       sun.util.calendar.ZoneInfo::getOffsets (276 bytes)
+Event: 0.390 Thread 0x00000000146e3000 nmethod 249 0x00000000023060d0 code [0x0000000002306300, 0x0000000002307088]
+Event: 0.390 Thread 0x00000000146e3000  245       3       ilog.cplex.CpxLinearExpr::<init> (84 bytes)
+Event: 0.390 Thread 0x00000000146e3000 nmethod 245 0x00000000023078d0 code [0x0000000002307a60, 0x00000000023080b8]
+Event: 0.390 Thread 0x00000000146e3000  250       3       ilog.cplex.CpxConstExpr::<init> (10 bytes)
+Event: 0.390 Thread 0x00000000146e3000 nmethod 250 0x0000000002308290 code [0x00000000023083e0, 0x0000000002308590]
+Event: 0.390 Thread 0x00000000146e3000  251       3       ilog.cplex.IloCplexModeler::constant (9 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.369 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebe7f360) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.370 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebe83068) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.380 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebed28d0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.381 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebed7548) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.381 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebeda050) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.382 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebedc838) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.382 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebedfd60) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.386 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebf01950) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.387 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebf2aed0) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+Event: 0.387 Thread 0x0000000002070800 Exception <a 'java/security/PrivilegedActionException'> (0x00000000ebf2d830) thrown at [D:\re\workspace\8-2-build-windows-amd64-cygwin\jdk8u25\1677\hotspot\src\share\vm\prims\jvm.cpp, line 1312]
+
+Events (10 events):
+Event: 0.382 loading class ilog/cplex/CpxSolveCallback
+Event: 0.382 loading class ilog/cplex/CpxSolveCallback done
+Event: 0.382 loading class ilog/cplex/CpxControlCallback
+Event: 0.382 loading class ilog/cplex/CpxControlCallback done
+Event: 0.386 loading class ilog/cplex/CpxConstExpr
+Event: 0.386 loading class ilog/cplex/CpxConstExpr done
+Event: 0.387 loading class ilog/cplex/CpxMult
+Event: 0.387 loading class ilog/cplex/CpxMult done
+Event: 0.387 loading class ilog/cplex/CpxBinaryExpr
+Event: 0.387 loading class ilog/cplex/CpxBinaryExpr done
+
+
+Dynamic libraries:
+0x00007ff69da50000 - 0x00007ff69da84000 	C:\Program Files\Java\jdk1.8.0_25\bin\java.exe
+0x00007ffac96a0000 - 0x00007ffac984c000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffac9560000 - 0x00007ffac969e000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ffac6c00000 - 0x00007ffac6d15000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x00007ffac5390000 - 0x00007ffac541e000 	C:\WINDOWS\system32\apphelp.dll
+0x00007ffac3280000 - 0x00007ffac32d3000 	C:\WINDOWS\AppPatch\AppPatch64\AcGenral.DLL
+0x00007ffac9140000 - 0x00007ffac91ea000 	C:\WINDOWS\system32\msvcrt.dll
+0x00007ffac6690000 - 0x00007ffac66be000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x00007ffac91f0000 - 0x00007ffac9244000 	C:\WINDOWS\system32\SHLWAPI.dll
+0x00007ffac93e0000 - 0x00007ffac9557000 	C:\WINDOWS\system32\USER32.dll
+0x00007ffac6ea0000 - 0x00007ffac7034000 	C:\WINDOWS\system32\ole32.dll
+0x00007ffac7240000 - 0x00007ffac8758000 	C:\WINDOWS\system32\SHELL32.dll
+0x00007ffac5e10000 - 0x00007ffac5e31000 	C:\WINDOWS\SYSTEM32\USERENV.dll
+0x00007ffac6de0000 - 0x00007ffac6e8a000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ffab3330000 - 0x00007ffab334e000 	C:\WINDOWS\SYSTEM32\MPR.dll
+0x00007ffac8ff0000 - 0x00007ffac9131000 	C:\WINDOWS\system32\RPCRT4.dll
+0x00007ffac6d20000 - 0x00007ffac6d79000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x00007ffac8a40000 - 0x00007ffac8c51000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x00007ffac7040000 - 0x00007ffac7191000 	C:\WINDOWS\system32\GDI32.dll
+0x00007ffac67f0000 - 0x00007ffac6805000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffac4970000 - 0x00007ffac4a22000 	C:\WINDOWS\SYSTEM32\SHCORE.dll
+0x00007ffac7200000 - 0x00007ffac7236000 	C:\WINDOWS\system32\IMM32.DLL
+0x00007ffac9270000 - 0x00007ffac93c2000 	C:\WINDOWS\system32\MSCTF.dll
+0x00007ffac4220000 - 0x00007ffac449a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.17810_none_6240b9c7ecbd0bda\COMCTL32.dll
+0x0000000064960000 - 0x0000000064a32000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\msvcr100.dll
+0x00000000639b0000 - 0x000000006420a000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\server\jvm.dll
+0x00007ffabd6f0000 - 0x00007ffabd6f9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffac0890000 - 0x00007ffac08b2000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffac93d0000 - 0x00007ffac93d7000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ffac6d80000 - 0x00007ffac6dda000 	C:\WINDOWS\system32\WS2_32.dll
+0x00007ffabd9e0000 - 0x00007ffabda0a000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x00007ffac8a30000 - 0x00007ffac8a39000 	C:\WINDOWS\system32\NSI.dll
+0x00007ffac68c0000 - 0x00007ffac690f000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x00007ffac5600000 - 0x00007ffac5628000 	C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+0x0000000065210000 - 0x000000006521f000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\verify.dll
+0x00000000648f0000 - 0x0000000064918000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\java.dll
+0x00000000651f0000 - 0x0000000065206000 	C:\Program Files\Java\jdk1.8.0_25\jre\bin\zip.dll
+0x00007ffa95c90000 - 0x00007ffa970b8000 	C:\Program Files\IBM\ILOG\CPLEX_Studio126\cplex\bin\x64_win64\cplex1260remotejni.dll
+0x00007ffab3dc0000 - 0x00007ffab3f49000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: ConicBB.Main 10 0.1 5 0.1 0.05 false 12345 1
+java_class_path (initial): C:\Users\AGomez\Dropbox\workspace\IEOR\LagrangeanConic\lib\cplex.jar;C:\Users\AGomez\Dropbox\workspace\IEOR\LagrangeanConic\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files\IBM\ILOG\CPLEX_Studio126\opl\bin\x64_win64;C:\Program Files\IBM\ILOG\CPLEX_Studio126\opl\oplide\;C:\Program Files\IBM\ILOG\CPLEX_Studio126\cplex\bin\x64_win64;C:\Program Files\IBM\ILOG\CPLEX_Studio126\cpoptimizer\bin\x64_win64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+USERNAME=AGomez
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 4005148k(1037276k free), swap 16063772k(11367288k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.25-b02) for windows-amd64 JRE (1.8.0_25-b18), built on Oct  7 2014 14:25:37 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Jun 26 11:28:09 2015
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
